@@ -1,6 +1,7 @@
 var mongoDB     = require('mongodb').MongoClient;
 
 var connection_string = 'mongodb://127.0.0.1:27017/nodejs';
+var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-01.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-02.hneglt3.mongodb.net:27017/test?ssl=true&replicaSet=atlas-u69sga-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
   connection_string = 'mongodb://' + process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
@@ -11,14 +12,14 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
 }
 
 function connect(callback){
-  mongoDB.connect(connection_string, function(err, db) {
+  mongoDB.connect(uri, function(err, db) {
     if(err) throw err;
     callback(db);
   });
 }
 
 exports.getAllDocuments = function(collection, callback) {
-  mongoDB.connect(connection_string, function(err, db) {
+  mongoDB.connect(uri, function(err, db) {
     if(err) throw err;
     var allDocs = db.collection(collection).find().toArray(function(err, docs) {
       callback(docs);
