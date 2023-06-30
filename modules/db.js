@@ -40,9 +40,9 @@ exports.getAllDocuments = function(collection, callback) {
   var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
   //client.close();
 //});
-    var allDocs = collection.find().forEach(function(err, docs) {
+    var allDocs = collection.find().toArray(function(err, docs) {
       callback(docs);
-     console.log(collection);
+     console.log(collection[0]);
      // console.log(docs);
   // console.log(allDocs);
       //console.log(db);
