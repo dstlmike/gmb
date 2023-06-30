@@ -29,7 +29,7 @@ function connect(callback){
   var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
  // client.close();
     callback(client);
-   // console.log(client);
+    console.log(client);
 });
 }
 
@@ -46,8 +46,8 @@ exports.getAllDocuments = function(collection, callback) {
       console.log(allDocs);
      console.log(results);
   // console.log(allDocs);
-      //console.log(db);
-    //  db.close();
+      console.log(db);
+    ///db.close();
       callback(results);
       client.close();
     });
