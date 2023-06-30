@@ -28,7 +28,7 @@ function connect(callback){
   MongoClient.connect(uri, function(err, client) { 
   var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
  // client.close();
-    callback(db);
+    callback(client);
 });
 }
 
