@@ -27,7 +27,8 @@ function connect(callback){
   */
   MongoClient.connect(uri, function(err, client) { 
   var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
-  client.close();
+ // client.close();
+    callback(db);
 });
 }
 
@@ -40,6 +41,7 @@ exports.getAllDocuments = function(collection, callback) {
 //});
     var allDocs = collection.find().toArray(function(err, docs) {
       callback(docs);
+     dconsole.log(docs);
     //  db.close();
       client.close();
     });
