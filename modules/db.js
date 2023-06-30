@@ -40,9 +40,10 @@ exports.getAllDocuments = function(collection, callback) {
   var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
   //client.close();
 //});
-    var allDocs = collection.find().forEach(client => console.log(client.name)) //(function(err, docs) {
-      callback(docs);
-     console.log(collection.find({}));
+    var allDocs = collection.find().toArray(function(err, results) {
+      var results = allDocs;
+     console.log(collection.find({});
+      console.log(results);
      // console.log(docs);
   // console.log(allDocs);
       //console.log(db);
@@ -50,6 +51,7 @@ exports.getAllDocuments = function(collection, callback) {
       client.close();
     });
   });
+  callback(
 }
 
 exports.findDocs = function(collection, matchHash, callback) {
