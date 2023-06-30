@@ -46,7 +46,7 @@ exports.respond = function(botRoom) {
   };
 console.log(request);
   console.log('-----');
- tconsole.log(dataHash);
+ console.log(dataHash);
   this.res.writeHead(200);
   this.res.end();
 
