@@ -43,7 +43,7 @@ exports.getAllDocuments = function(collection, callback) {
     var allDocs = collection.find().toArray(function(err, results) {
       var results = allDocs;
      console.log(collection);
-      console.log(results);
+      console.log(allDocs);
      // console.log(docs);
   // console.log(allDocs);
       //console.log(db);
