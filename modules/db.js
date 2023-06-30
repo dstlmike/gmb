@@ -42,7 +42,7 @@ exports.getAllDocuments = function(collection, callback) {
 //});
     var allDocs = collection.find().toArray(function(err, results) {
       var results = allDocs;
-     console.log(collection.find({}));
+     console.log(collection);
       console.log(results);
      // console.log(docs);
   // console.log(allDocs);
@@ -51,7 +51,7 @@ exports.getAllDocuments = function(collection, callback) {
       client.close();
     });
   });
-  callback(
+  callback(results);
 }
 
 exports.findDocs = function(collection, matchHash, callback) {
