@@ -26,7 +26,7 @@ function connect(callback){
   });
   */
   MongoClient.connect(uri, function(err, client) { 
-  var collection = client.db("test").collection("devices"); // perform actions on the collection object 
+  var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
   client.close();
 });
 }
@@ -35,10 +35,10 @@ exports.getAllDocuments = function(collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
   MongoClient.connect(uri, function(err, client) { 
-  var collection = client.db("test").collection("devices"); // perform actions on the collection object 
+  var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
   //client.close();
 //});
-    var allDocs = client.collection(collection).find().toArray(function(err, docs) {
+    var allDocs = collection.find().toArray(function(err, docs) {
       callback(docs);
     //  db.close();
       client.close();
