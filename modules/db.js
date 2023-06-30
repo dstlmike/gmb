@@ -7,7 +7,7 @@ var uri = "mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:2701
   client.close();
 });
 */
-var connection_string = 'mongodb://127.0.0.1:27017/nodejs';
+//var connection_string = 'mongodb://127.0.0.1:27017/nodejs';
 //var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-01.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-02.hneglt3.mongodb.net:27017/test?ssl=true&replicaSet=atlas-u69sga-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
