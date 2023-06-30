@@ -48,10 +48,11 @@ exports.getAllDocuments = function(collection, callback) {
   // console.log(allDocs);
       //console.log(db);
     //  db.close();
+      callback(results);
       client.close();
     });
   });
-  callback(results);
+//  callback(results);
 }
 
 exports.findDocs = function(collection, matchHash, callback) {
