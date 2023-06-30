@@ -41,7 +41,7 @@ exports.getAllDocuments = function(collection, callback) {
 //});
     var allDocs = collection.find().toArray(function(err, docs) {
       callback(docs);
-     console.log(allDocs);
+     console.log(collection);
     //  db.close();
       client.close();
     });
