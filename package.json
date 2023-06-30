@@ -8,6 +8,15 @@
   },
   "dependencies": {
     "director": "",
+    "path": "",
+    "dotenv": "",
+    "concat": "",
+    "http": "",
+    "https": "",
+    "fs": "",
+    "ejs": "",
+    "moment": "",
+    "nodemailer": "",
     "mongodb": "2.2.36"
   },
   "engines": {
