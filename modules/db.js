@@ -40,11 +40,11 @@ exports.getAllDocuments = function(collection, callback) {
   var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
   //client.close();
 //});
-    var allDocs = collection.find().toArray(function(err, results) {
-      var results = allDocs;
+    var allDocs = collection.find({name: true}).toArray(function(err, results) {
+       results = [];
      console.log(collection);
       console.log(allDocs);
-     // console.log(docs);
+     console.log(results);
   // console.log(allDocs);
       //console.log(db);
     //  db.close();
