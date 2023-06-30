@@ -61,7 +61,7 @@ exports.findDocs = function(collection, matchHash, callback) {
     cursor.each(function(err, doc){
       if(doc != null)
         ret.push(doc);
-  console.log(cursor);
+//  console.log(cursor);
       else
         callback(ret);
     });
