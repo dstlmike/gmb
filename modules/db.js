@@ -39,11 +39,11 @@ function connect(callback){
 });
 }
 
-exports.getAllDocuments = function(client, collection, callback) {
+exports.getAllDocuments = function(collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
-  var client = new MongoClient(uri);
- client.connect(uri, function(err, client) {
+ // var client = new MongoClient(uri);
+var client = MongoClient.connect(uri, function(err, client) {
  // MongoClient.connect(uri, function(err, client) { 
   var dbo = client.db("sampledb").collection("rooms"); // perform actions on the collection object 
   //client.close();
