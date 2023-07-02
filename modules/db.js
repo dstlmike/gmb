@@ -43,7 +43,7 @@ exports.getAllDocuments = function(client, collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
   var client = new MongoClient(uri);
- client.connect(uri);
+ client.connect(uri, function(err, client) {
  // MongoClient.connect(uri, function(err, client) { 
   var dbo = client.db("sampledb").collection("rooms"); // perform actions on the collection object 
   //client.close();
@@ -64,7 +64,7 @@ exports.getAllDocuments = function(client, collection, callback) {
       client.close();
      //  };
     });
-//  });
+ });
 //  callback(results);
 }
 
