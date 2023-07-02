@@ -43,12 +43,12 @@ exports.getAllDocuments = function(collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
  // var client = new MongoClient(uri);
-MongoClient.connect(uri, function(err, client) {
+MongoClient.connect(uri, function(err, db) {
  // MongoClient.connect(uri, function(err, client) { 
   var dbo = client.db("sampledb").collection("rooms"); // perform actions on the collection object 
   //client.close();
 //});
-    dbo.find().forEach(function(err, results) {
+    dbo.find().forEach(function(err, result) {
       // if(results > 0) { //= [];
       var result = {};
      console.log('1 ');
