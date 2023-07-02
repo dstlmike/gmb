@@ -53,7 +53,7 @@ function deleteCmdFromDB(cmd, callback){
 
 //exports
 exports.checkCommands = function(dataHash, callback) {
-  for (cmd in commands) {
+  for (var cmd in commands) {
     cmd = commands[cmd];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
     if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp')
@@ -61,12 +61,12 @@ exports.checkCommands = function(dataHash, callback) {
     var cmdReg = new RegExp(cmd.regex, "i");
     if (dataHash.request.text && cmdReg.test(dataHash.request.text)){
       var val = cmdReg.exec(dataHash.request.text);
-      callback(true, cmd.message, cmd.attachments);
+      callback(true, cmd.message, cmd.attachments, []);
       break;
     }
   }
 
-  for (cmd in userCommands) {
+  for (var cmd in userCommands) {
     var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
@@ -110,7 +110,7 @@ function addCmd(request, bots, isMod, callback) {
       return msg;
     }
 
-    for (cmd in commands) {
+    for (var cmd in commands) {
       if (commands[cmd].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
@@ -124,7 +124,7 @@ function addCmd(request, bots, isMod, callback) {
       message: val[2],
     };
 
- //   commands.push(cmdHash);
+ cmd.push(cmdHash);
     addCmdToDB(cmdHash);
     var msg = val[1] + " command added! please use \"/cmd describe " + val[1] + " <description>\" to add a description for your new command";
     callback(true, msg, []);
