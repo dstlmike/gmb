@@ -38,7 +38,7 @@ function connect(callback){
     console.log(client);
 });
 }
-
+/*
 exports.getAllDocuments = function(client, collection) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
@@ -68,9 +68,9 @@ MongoClient.connect(uri, function(err, client) {
 //  callback(results);
 }
 
+*/
 
 
-/*
 exports.getAllDocuments = function(collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
@@ -96,7 +96,7 @@ exports.getAllDocuments = function(collection, callback) {
   });
 //  callback(results);
 }
-*/
+
 exports.findDocs = function(collection, matchHash, callback) {
   connect(function(db){
     var cursor = db.collection(collection).find(matchHash);
