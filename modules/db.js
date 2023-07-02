@@ -42,9 +42,12 @@ exports.getAllDocuments = function(collection, callback) {
 //});
     var allDocs = collection.find({}).toArray(function(err, results) {
       // if(results > 0) { //= [];
-     console.log('1 ' + collection);
-      console.log('2 ' + allDocs);
-     console.log('1 ' + results);
+     console.log('1 ');
+     console.log(collection);
+      console.log('2 ');
+      console.log(allDocs);
+     console.log('3 ');
+     console.log(results);
   // console.log(allDocs);
      // console.log(db);
     ///db.close();
