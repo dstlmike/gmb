@@ -60,7 +60,7 @@ MongoClient.connect(uri, function(err, client) {
   // console.log(allDocs);
      // console.log(db);
     ///db.close();
-      callback(result);
+     // callback(result);
       client.close();
      //  };
     });
