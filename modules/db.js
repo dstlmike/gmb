@@ -41,16 +41,16 @@ exports.getAllDocuments = function(collection, callback) {
   //client.close();
 //});
     var allDocs = collection.find({}).toArray(function(err, results) {
-       if(results > 0) { //= [];
-     console.log(collection);
-      console.log(allDocs);
-     console.log(results);
+      // if(results > 0) { //= [];
+     console.log('1 ' + collection);
+      console.log('2 ' + allDocs);
+     console.log('1 ' + results);
   // console.log(allDocs);
      // console.log(db);
     ///db.close();
       callback(results);
       client.close();
-       };
+     //  };
     });
   });
 //  callback(results);
