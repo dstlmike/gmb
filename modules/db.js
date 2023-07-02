@@ -75,7 +75,7 @@ exports.getAllDocuments = function(collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
   MongoClient.connect(uri, function(err, client) { 
-  var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
+  var collection = client.db("sampledb").collection("rooms"); // perform actions on the collection object 
   //client.close();
 //});
     var allDocs = collection.find().toArray(function(err, results) {
