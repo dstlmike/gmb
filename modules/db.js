@@ -30,14 +30,16 @@ function connect(callback){
   });
   */
   MongoClient.connect(uri, function(err, client) { 
-  var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
+//client = new MongoClient(uri);
+
+  var collection = client.db("sampledb").collection("rooms"); // perform actions on the collection object 
  // client.close();
     callback(client);
     console.log(client);
 });
 }
 
-exports.getAllDocuments = function(collection, callback) {
+exports.getAllDocuments = function(client, collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
   MongoClient.connect(uri, function(err, client) { 
@@ -63,6 +65,35 @@ exports.getAllDocuments = function(collection, callback) {
 //  callback(results);
 }
 
+
+
+/*
+exports.getAllDocuments = function(collection, callback) {
+  //mongoDB.connect(uri, function(err, db) {
+    //if(err) throw err;
+  MongoClient.connect(uri, function(err, client) { 
+  var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
+  //client.close();
+//});
+    var allDocs = collection.find().toArray(function(err, results) {
+      // if(results > 0) { //= [];
+     console.log('1 ');
+     console.log(collection);
+      console.log('2 ');
+      console.log(allDocs);
+     console.log('3 ');
+     console.log(results);
+  // console.log(allDocs);
+     // console.log(db);
+    ///db.close();
+      callback(results);
+      client.close();
+     //  };
+    });
+  });
+//  callback(results);
+}
+*/
 exports.findDocs = function(collection, matchHash, callback) {
   connect(function(db){
     var cursor = db.collection(collection).find(matchHash);
