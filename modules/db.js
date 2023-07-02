@@ -39,7 +39,7 @@ function connect(callback){
 });
 }
 
-exports.getAllDocuments = function(collection, callback) {
+exports.getAllDocuments = function(client, collection) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
  // var client = new MongoClient(uri);
