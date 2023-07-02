@@ -64,7 +64,7 @@ exports.getAllDocuments = function(client, collection, callback) {
       client.close();
      //  };
     });
-  });
+//  });
 //  callback(results);
 }
 
