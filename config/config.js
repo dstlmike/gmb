@@ -25,7 +25,8 @@ function setConfig(){
 }
 exports.owner = {
   name: "Alex De A",
-  id: "10241176"
+  id: "10241176",
+  isMod: true
 };
 exports.isMod = true;
   
