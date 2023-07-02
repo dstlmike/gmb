@@ -18,7 +18,9 @@
     "moment": "",
     "nodemailer": "",
     "mongodb": "2.2.36",
-    "router": ""
+    "router": "",
+    "regexp": "",
+    "regex": ""
   },
   "engines": {
     "node": ">= 0.6.0",
