@@ -42,22 +42,25 @@ function connect(callback){
 exports.getAllDocuments = function(client, collection, callback) {
   //mongoDB.connect(uri, function(err, db) {
     //if(err) throw err;
-  MongoClient.connect(uri, function(err, client) { 
-  var collection = client.db("sampledb").collection("test"); // perform actions on the collection object 
+  var client = new MongoClient(uri);
+ client.connect(uri);
+ // MongoClient.connect(uri, function(err, client) { 
+  var dbo = client.db("sampledb").collection("rooms"); // perform actions on the collection object 
   //client.close();
 //});
-    var allDocs = collection.find().toArray(function(err, results) {
+    dbo.find().forEach(function(err, results) {
       // if(results > 0) { //= [];
+      var result = {};
      console.log('1 ');
      console.log(collection);
       console.log('2 ');
       console.log(allDocs);
      console.log('3 ');
-     console.log(results);
+     console.log(result);
   // console.log(allDocs);
      // console.log(db);
     ///db.close();
-      callback(results);
+      callback(result);
       client.close();
      //  };
     });
