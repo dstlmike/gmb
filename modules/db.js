@@ -1,6 +1,6 @@
 var mongoDB     = require('mongodb').MongoClient;
 var MongoClient = require('mongodb').MongoClient;
-var uri = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+var uri = 'mongodb://user2:user2@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb1?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 //var uri = "mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-01.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-02.hneglt3.mongodb.net:27017/sampledb?ssl=true&replicaSet=atlas-u69sga-shard-0&authSource=admin&retryWrites=true&w=majority";
 /*MongoClient.connect(uri, function(err, client) { 
@@ -79,18 +79,18 @@ exports.getAllDocuments = function(collection, callback) {
   //client.close();
 //});
     allDocs;
-    var allDocs = collection.find().toArray(function(err, results) {
+    var allDocs = collection.find().toArray(function(err, docs) {
       // if(results > 0) { //= [];
      console.log('1 ');
      console.log(collection);
       console.log('2 ');
-      console.log(allDocs);
+      console.log(docs);
      console.log('3 ');
      console.log(results);
   // console.log(allDocs);
      // console.log(db);
     ///db.close();
-      callback(results);
+      callback(docs);
       client.close();
      //  };
     });
