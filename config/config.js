@@ -27,6 +27,8 @@ exports.owner = {
   name: "Alex De A",
   id: "10241176"
 };
+exports.isMod = 'true';
+  
 exports.setConfig = setConfig;
 exports.bot_name = 'Fo0 Bot';
 exports.delay_time = 1000;
