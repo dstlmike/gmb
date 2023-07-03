@@ -101,7 +101,7 @@ exports.getAllDocuments = function(collection, callback) {
 
 exports.findDocs = function(collection, matchHash, callback) {
  // connect(function(db){
-  MongoClient.connect(uri, function(err, client) { 
+  MongoClient.connect(uri, function(err, db) { 
 
     var cursor = db.collection(collection).find(matchHash);
     var ret = [];
@@ -116,7 +116,7 @@ exports.findDocs = function(collection, matchHash, callback) {
 }
 
 exports.addDoc = function(collection, doc, callback) {
- MongoClient.connect(uri, function(err, client) { 
+ MongoClient.connect(uri, function(err, db) { 
 // connect(function(db){
     var ret = db.collection(collection).insert(doc, function(err, result){
       if (callback)
@@ -127,7 +127,7 @@ exports.addDoc = function(collection, doc, callback) {
 }
 
 exports.updateOneDoc = function(collection, findJson, updateJson, callback) {
-MongoClient.connect(uri, function(err, client) { 
+MongoClient.connect(uri, function(err, db) { 
 //  connect(function(db){
     var ret = db.collection(collection).updateOne(findJson, updateJson, function(err, result) {
       if (callback)
@@ -138,7 +138,7 @@ MongoClient.connect(uri, function(err, client) {
 }
 
 exports.removeOneDoc = function(collection, findJson, callback) {
-MongoClient.connect(uri, function(err, client) { 
+MongoClient.connect(uri, function(err, db) { 
 //  connect(function(db){
     var ret = db.collection(collection).deleteOne(findJson, function(err, result){
       if (callback)
@@ -149,7 +149,7 @@ MongoClient.connect(uri, function(err, client) {
 }
 
 exports.countDocs = function (collection, callback) {
- MongoClient.connect(uri, function(err, client) { 
+ MongoClient.connect(uri, function(err, db) { 
 // connect(function(db){
     var ret = db.collection(collection).count(function(err, result){
       if (callback)
@@ -160,7 +160,7 @@ exports.countDocs = function (collection, callback) {
 }
 
 exports.randomDoc = function(collection, callback) {
- MongoClient.connect(uri, function(err, client) { 
+ MongoClient.connect(uri, function(err, db) { 
 // connect(function(db){
     var coll = db.collection(collection);
     cursor = coll.find({});
