@@ -81,6 +81,7 @@ exports.getAllDocuments = function(collection, callback) {
     allDocs;
     var allDocs = collection.find().toArray(function(err, docs) {
       // if(results > 0) { //= [];
+      results = {};
      console.log('1 ');
      console.log(collection);
       console.log('2 ');
