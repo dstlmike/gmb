@@ -61,8 +61,8 @@ exports.getCmdListDescription = function () {
     cmdArr = [
     {cmd: "/room add 'name' 'id'", desc: "Add the bot to another room.", owner: true},
   ];
-
-  return cmdArr;
+//Next line []
+  return [ cmdArr ];
 }
 
 function cmdRoomAdd(request, currentBot, owner, callback) {
@@ -71,7 +71,7 @@ function cmdRoomAdd(request, currentBot, owner, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-  //  console.log(owner.id);
+    console.log(owner.id);
     if (request.user_id != owner.id || currentBot.type != 'config')
       return true;
 
