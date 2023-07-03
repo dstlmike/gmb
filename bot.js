@@ -44,7 +44,7 @@ exports.respond = function(botRoom) {
     funMode:      sysCommands.fun_mode(),
     owner:        config.env().owner //config.owner //config.env().owner
   };
-console.log(request);
+//console.log(request);
   console.log('-----');
  console.log(dataHash);
   this.res.writeHead(200);
@@ -116,7 +116,7 @@ function postMessage(botResponse, attachments, botID) {
   });
   botReq.on('timeout', function(err) {
     console.log('timeout posting message: ');
-    console.log(err);
+    
   });
   botReq.end(JSON.stringify(body));
 }
