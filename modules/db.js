@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+/*const { MongoClient } = require("mongodb");
 
 async function run() {
   // TODO:
@@ -7,7 +7,7 @@ async function run() {
   // a valid username and password! Note that in a production environment,
   // you do not want to store your password in plain-text here.
   const uri =
-    "mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/?ssl=true&replicaSet=Cluster0-shard-0&defaultauthdb=sampledb1&retryWrites=true&w=majority";
+    "mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/?ssl=true&replicaSet=Cluster0-shard-0&authSource=sampledb1&retryWrites=true&w=majority";
 
   // The MongoClient is the object that references the connection to our
   // datastore (Atlas, for example)
@@ -35,7 +35,7 @@ async function run() {
    * You can insert individual documents using collection.insert().
    * In this example, we're going to create four documents and then
    * insert them all in one call with collection.insertMany().
-   */
+   //* /
 
   const recipes = [
     {
@@ -102,7 +102,7 @@ async function run() {
    * the data in a collection, we call Find() with an empty filter.
    * The Builders class is very helpful when building complex
    * filters, and is used here to show its most basic use.
-   */
+   //* /
 
   const findQuery = { prepTimeInMinutes: { $lt: 45 } };
 
@@ -139,7 +139,7 @@ async function run() {
    *
    * Here we update the PrepTimeInMinutes value on the document we
    * just found.
-   */
+   //* /
   const updateDoc = { $set: { prepTimeInMinutes: 72 } };
 
   // The following updateOptions document specifies that we want the *updated*
@@ -165,7 +165,7 @@ async function run() {
    *      of the documents in a collection, pass an empty filter to
    *      the DeleteMany() method. In this example, we'll delete two of
    *      the recipes.
-   */
+ //  * /
 
 
   const deleteQuery = { name: { $in: ["elotes", "fried rice"] } };
@@ -182,7 +182,7 @@ async function run() {
 run().catch(console.dir);
 
 
-/*
+*/
 
 
 var mongoDB     = require('mongodb').MongoClient;
@@ -191,7 +191,7 @@ var db = require('mongodb').Db
 //var connection_string = 'mongodb://dstl%5Fmike1%40hotmail%2Ecom:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 //var connection_string = 'mongodb://0.0.0.0:27017/test';
-var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/?ssl=true&replicaSet=Cluster0-shard-0&defaultauthdb=sampledb1&retryWrites=true&w=majority';
+var connection_string = 'mongodb://alexbot:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/?ssl=true&replicaSet=Cluster0-shard-0&authSource=sampledb1&retryWrites=true&w=majority';
 
 
 //var connection_string = 'mongodb+srv://dstlmike1:308boonave@cluster0-esmha.mongodb.net/test';
@@ -229,10 +229,10 @@ function connect(callback){
 exports.getAllDocuments = function(collection, docs, callback) {
   connect(function(db){
     //if(err) throw err;
-    //var allDocs = db.collection(collection).find().toArray(function(err, docs) {
-    var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
+    var allDocs = db.collection(collection).find().toArray(function(err, docs) {
+   // var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
       if (callback)
-        callback(result);
+        callback(docs);
       db.close();
     });
   });
@@ -314,4 +314,4 @@ exports.randomDoc = function(collection, callback) {
     });
   });
 }
-*/
+
