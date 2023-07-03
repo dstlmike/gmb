@@ -53,7 +53,7 @@ console.log(request);
   if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
 
-  if (!rooms.getRoom(botRoom).id && botRoom != 'config')
+  if (!rooms.getRoom(botRoom).id && currentBot.type != 'config') // botRoom != 'config')
     return;
 
   for(var lib in checkCommandsHSH) {
