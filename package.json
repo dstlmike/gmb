@@ -17,13 +17,13 @@
     "ejs": "",
     "moment": "",
     "nodemailer": "",
-    "mongodb": "2.2.12",
+    "mongodb": "2.2.36",
     "router": "",
     "regexp": "",
     "regex": ""
   },
   "engines": {
-    "node": ">= 0.6.0",
+    "node": "0.10.3",
     "npm": ">= 1.0.0"
   },
   "repository": {
