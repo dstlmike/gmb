@@ -39,10 +39,11 @@ exports.getRooms = function() {
 exports.getRoom = function(path) {
   var room = {};
   path = path.toLowerCase();
+var botID = '99a3229635d13195ec4d0fe4e7'; //
 
   if (rooms[path] == 'config') {
     room.type = path;
-    rooms[path] = room.id; // = botID; //rooms[path];
+    room.id = botID; //rooms[path];
  }
 
   return room;
