@@ -40,7 +40,7 @@ exports.getRoom = function(path) {
   var room = {};
   path = path.toLowerCase();
 
-  if (rooms[path]) {
+  if (rooms[path] == 'config') {
     room.type = path;
     room.id = rooms[path];
  }
