@@ -3,7 +3,7 @@ var db = require('./db.js');
 var mod_config = require('../config/config.js');
 var rooms = [];
 var roomCommands = [cmdRoomAdd, cmdToken, cmdConfig];
-var botID = "99a3229635d13195ec4d0fe4e7"; //
+var botID = '99a3229635d13195ec4d0fe4e7'; //
 getAllRooms();
 exports.modName = "Rooms Control";
 
@@ -42,7 +42,7 @@ exports.getRoom = function(path) {
 
   if (rooms[path] == 'config') {
     room.type = path;
-    room.id = botID; //rooms[path];
+    rooms[path] = room.id; // = botID; //rooms[path];
  }
 
   return room;
