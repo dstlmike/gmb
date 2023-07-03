@@ -9,8 +9,9 @@ exports.modName = "Rooms Control";
 
 function getAllRooms(){
   db.getAllDocuments(db_table, function(res){
-    rooms = res; //[];
-    for (var room in res) {
+    rooms = [];
+    res = [];
+    for (room in res) {
       rooms[res[room].name] = res[room].id;
     }
   });
