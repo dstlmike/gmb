@@ -43,7 +43,7 @@ var botID = '99a3229635d13195ec4d0fe4e7'; //
 
   if (rooms[path] == 'config') {
     room.type = path;
-    room.id = botID; //rooms[path];
+    '99a3229635d13195ec4d0fe4e7' = rooms[path];
  }
 
   return room;
