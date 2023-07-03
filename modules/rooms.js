@@ -37,13 +37,16 @@ exports.getRooms = function() {
 }
 
 exports.getRoom = function(path) {
-  var room = {};
+  var room = {
+    'type': 'config',
+ 'id': '/config 99a3229635d13195ec4d0fe4e7'
+  };
   path = path.toLowerCase();
 var botID = '99a3229635d13195ec4d0fe4e7'; //
 
   if (rooms[path] == 'config') {
     room.type = path;
-    '99a3229635d13195ec4d0fe4e7' = rooms[path];
+ room.id = rooms[path];
  }
 
   return room;
