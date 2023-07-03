@@ -23,11 +23,11 @@ function setConfig(){
     }
   });
 }
-//exports.owner = {
- // name: "Alex De A",
-  //id: "10241176",
- // isMod: true
-//};
+exports.owner = {
+  name: "Alex De A",
+  id: "10241176",
+  isMod: true
+};
 //exports.isMod = true;
   
 exports.setConfig = setConfig;
