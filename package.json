@@ -23,7 +23,7 @@
     "regex": ""
   },
   "engines": {
-    "node": "0.10.38",
+    "node": "",
     "npm": ""
   },
   "repository": {
