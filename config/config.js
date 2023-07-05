@@ -12,7 +12,7 @@ setConfig();
 
 function setConfig(){
   db.getAllDocuments(db_table, function(res){
-    env = {};
+   var env = {};
     res = [];
     for (var conf in res){
         env[res[conf].config] = {};
