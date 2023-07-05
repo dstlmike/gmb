@@ -1,5 +1,5 @@
 #!/bin/env node
-var http, director, bot, router, server, port, db ip;
+var http, director, bot, router, server, port, db, ip;
 
 http        = require('http');
 director    = require('director');
