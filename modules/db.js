@@ -318,7 +318,7 @@ exports.randomDoc = function(collection, callback) {
 
 
 
-var {MongoClient} = require('mongodb');
+var { MongoClient } = require('mongodb');
 //var createListing = require('./test.js');
 async function main (){
   var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
