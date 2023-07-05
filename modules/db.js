@@ -5,8 +5,11 @@ var MongoClient = require('mongodb');
 //var { MongoClient } = require('mongodb');
 //var createListing = require('./test.js');
 async function main (){
-  var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
-var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+ // var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
+
+var uri = 'mongodb://user2:user2@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledb1?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
+
+  var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 try {
   await client.connect();
   //await listDatabases(client);
