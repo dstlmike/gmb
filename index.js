@@ -1,5 +1,5 @@
 #!/bin/env node
-var http, director, bot, router, server, port, db;
+var http, director, bot, router, server, port, db ip;
 
 http        = require('http');
 director    = require('director');
@@ -38,7 +38,7 @@ server = http.createServer(function (req, res) {
 port = process.env.PORT || 8080;
 ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
-server.listen(port);
+server.listen(port, ip);
 
 function ping() {
   this.res.writeHead(200);
