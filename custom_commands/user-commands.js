@@ -53,7 +53,7 @@ function deleteCmdFromDB(cmd, callback){
 
 //exports
 exports.checkCommands = function(dataHash, callback) {
-  for (var cmd in commands) {
+  for (cmd in commands) {
     cmd = commands[cmd];
     //hard coded temporarily ... maybe permanently ... losing motivation to work on this
   //  if(cmd.name == 'cc' && dataHash.currentBot.type == 'hp')
@@ -66,7 +66,7 @@ exports.checkCommands = function(dataHash, callback) {
     }
   }
 
-  for (var cmd in userCommands) {
+  for (cmd in userCommands) {
     var test = userCommands[cmd](dataHash.request, dataHash.bots, dataHash.isMod, callback);
     if (test)
       return test;
@@ -103,14 +103,14 @@ function addCmd(request, bots, isMod, callback) {
 
   if (regex.test(reqText)){
     var val = regex.exec(reqText);
-
+/*
     if (!isMod) {
       var msg = "You don't have permission to add commands"
       callback(true, msg, []);
       return msg;
     }
-
-    for (var cmd in commands) {
+*/
+    for (cmd in commands) {
       if (commands[cmd].name == val[1]) {
         var msg = val[1] + " already exists";
         callback(true, msg, []);
