@@ -21,7 +21,7 @@ try {
     bedrooms: 1,
     bathrooms: 1
   }
-
+await listDatabases(client, callback);
 );
 } catch (e){
   console.error(e);
