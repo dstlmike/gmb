@@ -357,6 +357,8 @@ exports.getAllDocuments = function(collection, docs, callback) {
    // var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
       if (callback)
         callback(docs);
+console.log(docs);
+
       db.close();
     });
   });
@@ -382,7 +384,7 @@ exports.findDocs = function(collection, matchHash, callback) {
 
 exports.addDoc = function(collection, doc, callback) {
   connect(function(db){
-    var ret = db.collection(collection).insert(doc, function(err, result){
+    var ret = db.collection(collection).insertOne(doc, function(err, result){
       if (callback)
         callback(result);
       db.close();
