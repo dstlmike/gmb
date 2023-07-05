@@ -23,7 +23,7 @@ try {
   }
 
 );
- await listDatabases(client, callback);
+ await listDatabases(client);
 } catch (e){
   console.error(e);
 } finally {
