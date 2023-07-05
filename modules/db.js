@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+var { MongoClient } = require('mongodb').MongoClient;
 /*
 async function run() {
   // TODO:
