@@ -409,4 +409,4 @@ async function listDatabases(client){
 
 //-----
 //exports.createListing = createListing;
-exports.main = main;
+//exports.main = main;
