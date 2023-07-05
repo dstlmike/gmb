@@ -1,6 +1,6 @@
 var db_table = 'config';
 var db = require('../modules/db.js');
-//var env = {};
+var env;
 
 exports.debug = process.env.DEBUG || false;
 
@@ -12,7 +12,7 @@ setConfig();
 
 function setConfig(){
   db.getAllDocuments(db_table, function(res){
-   var env = {};
+    env = {};
     res = [];
     for (var conf in res){
         env[res[conf].config] = {};
