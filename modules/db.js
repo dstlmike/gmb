@@ -26,7 +26,7 @@ try {
   await client.close();
 }
 }
-
+/*
 async function connect (){
   var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
 var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -68,7 +68,29 @@ async function connectMain(client, newListing) {
 main().catch(console.err);
 //main().catch(console.err);
 
+*/
 
+//var {MongoClient} = require('mongodb');
+//var main = require('./tutorial.js')
+async function createListing(client, newListing){
+  var newListing = {
+
+  name: newListing.name,
+  summary: newListing.summary,
+  bedrooms: newListing.bedrooms,
+  bathrooms: newListing.bathrooms
+}
+
+  var result = await client.db("sampledbb").collection("test").insertOne(newListing);
+  console.log(result, newListing);
+}
+
+//main.main().catch(console.err);
+exports.createListing = createListing;
+
+
+//---
+/*
 async function createListing(client, newListing){
   var newListing = {
 
@@ -81,7 +103,7 @@ async function createListing(client, newListing){
   var result = await client.db("sampledb").collection("test").insertOne(newListing);
   console.log(result, newListing);
 }
-
+*/
 //-----
 
 async function listDatabases(client){
