@@ -362,6 +362,7 @@ console.log(docs);
 
       db.close();
     });
+   allDocs;
   });
 }  
     //callback(docs);
