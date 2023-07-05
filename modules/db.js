@@ -88,8 +88,8 @@ async function createListing(client, newListing){
   console.log(result, newListing);
 }
 
-//main.main().catch(console.err);
-exports.createListing = createListing;
+main.main().catch(console.err);
+//exports.createListing = createListing;
 
 
 //---
