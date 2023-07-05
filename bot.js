@@ -53,10 +53,10 @@ exports.respond = function(botRoom) {
   if (dataHash.request.sender_type == 'bot') return;
   dataHash.request.text = dataHash.request.text.trim();
 
- // if (!rooms.getRoom(botRoom).id && currentBot.type != 'config') // botRoom != 'config')
-   // return;
+if (!rooms.getRoom(botRoom).id && botRoom != 'config')
+    return;
 
-  for(var lib in checkCommandsHSH) {
+  for(lib in checkCommandsHSH) {
     checkCommandsHSH[lib].checkCommands(dataHash, function(check, result, attachments){
       if (check) sendDelayedMessage(result, attachments, rooms.getRoom(botRoom).id);
     });
