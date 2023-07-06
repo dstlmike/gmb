@@ -19,6 +19,7 @@ function getAllRooms(){
 
 function addRoomToDB(room, callback){
   db.addDoc(db_table, room, callback);
+  console.log(room);
 }
 
 function addConfigToDB(config, callback){
