@@ -359,7 +359,7 @@ exports.getAllDocuments = function(collection, docs, callback) {
       if (callback)
         callback(docs);
 console.log(docs);
-
+alldocs;
       db.close();
     });
    allDocs;
