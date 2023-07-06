@@ -14,6 +14,11 @@ function getAllRooms(){
    // res = [];
     for (room in res) {
       rooms[res[room].name] = res[room].id;
+      var rom = rooms[res[room].name];
+var roms = res[room].id;
+      console.log(rom + '-/-\n' + roms);
+
+      
     }
   });
 }
