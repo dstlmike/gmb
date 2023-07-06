@@ -39,10 +39,10 @@ exports.respond = function(botRoom) {
   var dataHash = {
     request:      request,
     currentBot:   rooms.getRoom(botRoom),
-    isMod:        mods.isMod(request.user_id), //config.isMod, //mods.isMod(request.user_id),
+    isMod:        process.env.isMod, //mods.isMod(request.user_id), //config.isMod, //mods.isMod(request.user_id),
     bots:         rooms.getRooms(),
     funMode:      sysCommands.fun_mode(),
-    owner:        config.env().owner //config.owner //config.env().owner
+    owner:        process.env.owner.id //config.env().owner //config.owner //config.env().owner
   };
 //console.log(request);
   console.log('-----');
