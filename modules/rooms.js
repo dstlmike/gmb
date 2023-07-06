@@ -20,11 +20,12 @@ function getAllRooms(){
 
 function addRoomToDB(room, callback){
   db.addDoc(db_table, room, callback);
-  console.log(room);
+ // console.log(room);
 }
 
 function addConfigToDB(config, callback){
   db.addDoc('config', config, callback);
+  console.log(room);
 }
 
 function setAccessTokenDB(config, callback){
