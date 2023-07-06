@@ -10,7 +10,7 @@ exports.modName = "Rooms Control";
 function getAllRooms(){
   db.getAllDocuments(db_table, function(res){
     rooms = [];
-   console.log(rooms);
+   console.log(res);
    // res = [];
     for (room in res) {
       rooms[res[room].name] = res[room].id;
@@ -25,7 +25,7 @@ function addRoomToDB(room, callback){
 
 function addConfigToDB(config, callback){
   db.addDoc('config', config, callback);
-  console.log(config);
+  console.log('%/');
 }
 
 function setAccessTokenDB(config, callback){
