@@ -28,7 +28,7 @@ var checkCommandsHSH = [mods, sysTriggers, userCmds, userMentions, sysCommands, 
 exports.init = function() {
   var req = this.req;
   init.initPage(req, function(body){
-    console.log(req);
+ //   console.log(req);
     this.res.writeHead(200, {"Content-Type": "text/html"});
     this.res.end(body);
   });
