@@ -36,10 +36,14 @@ server = http.createServer(function (req, res) {
   });
 });
 
-port =  process.env.PORT || 8080;
-ip = process.env.OPENSHIFT_NODEJS_IP || "0.0.0.0" || "127.0.0.1";
+port =  process.env.PORT || "27017" || "8080";
+ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1" || "0.0.0.0";
 
-server.listen(port);
+server.listen(port, function(req, res, next){
+  console.log(port + ' ' + ip);
+  console.log(req);
+  
+});
 
 function ping() {
   this.res.writeHead(200);
