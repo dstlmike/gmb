@@ -28,7 +28,7 @@ var checkCommandsHSH = [mods, sysTriggers, userCmds, userMentions, sysCommands, 
 exports.init = function() {
   var req = this.req;
   init.initPage(req, function(body){
-    console.log(body);
+    console.log(req);
     this.res.writeHead(200, {"Content-Type": "text/html"});
     this.res.end(body);
   });
@@ -104,9 +104,9 @@ function postMessage(botResponse, attachments, botID) {
 
   console.log('sending ' + botResponse + ' to ' + botID);
 
-  botReq = HTTPS.request(options, function(res) {
+  botReq = HTTPS.request(options, function(req, res) {
       if (res.statusCode == 202 || res.statusCode == 200) {
-      console.log(res);  //neat
+      console.log(req);  //neat
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
