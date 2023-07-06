@@ -41,7 +41,8 @@ ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1" || "0.0.0.0";
 
 server.listen(port, function(req, res, next){
   console.log(port + ' ' + ip);
-  console.log('____\n' + req);
+  console.log('____\n');
+ rconsole.log(req);
   
 });
 
