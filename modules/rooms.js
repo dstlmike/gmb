@@ -25,7 +25,7 @@ function addRoomToDB(room, callback){
 
 function addConfigToDB(config, callback){
   db.addDoc('config', config, callback);
-  console.log(room);
+  console.log(config);
 }
 
 function setAccessTokenDB(config, callback){
