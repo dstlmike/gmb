@@ -334,7 +334,7 @@ run().catch(console.dir);
 
 
 var mongoDB     = require('mongodb').MongoClient;
-//var db = require('mongodb').Db
+var db = require('mongodb').Db
 
 //var connection_string = 'mongodb://dstl%5Fmike1%40hotmail%2Ecom:308boonave@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 
@@ -380,13 +380,13 @@ function connect(callback){
 exports.getAllDocuments = function(collection, docs, callback) {
   mongoDB.connect(connection_string, function(err, db) {
     //if(err) throw err;
-    var allDocs = db.collection(collection).find().toArray(function(err, result) {
+    var allDocs = db.collection(collection).find().toArray(function(err, docs) {
    // var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
       if (callback)
-        callback(result);
+        callback(docs);
 //console.log(docs);
 //alldocs;
-      db.close();
+    //  db.close();
     });
  //  allDocs;
   });
