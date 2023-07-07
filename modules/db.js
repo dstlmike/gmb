@@ -35,7 +35,7 @@ var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:2701
 }
 */
 client.connect();
-  listDatabases(client);
+ // listDatabases(client);
   createListing(
     client,
       {
