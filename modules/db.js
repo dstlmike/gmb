@@ -11,7 +11,7 @@ var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:2701
 //var uri = 'mongodb://user2:user2@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledbb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
 
   var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-try {
+//try {
  /*
   await client.connect();
   //await listDatabases(client);
@@ -44,13 +44,13 @@ client.connect();
     bathrooms: 1
   }
 
-);
+//);
  // listDatabases(client);
-} catch (e){
-  console.error(e);
-} finally {
+//} catch (e){
+ // console.error(e);
+//} finally {
    client.close();
-}
+//}
 }
 /*
 async function connect (){
@@ -107,7 +107,7 @@ function createListing(client, newListing){
   bathrooms: newListing.bathrooms
 }
 
-  var result = await client.db("sampledbb").collection("test").insertOne(newListing);
+  var result = client.db("sampledb").collection("rooms").insertOne(newListing);
   console.log(result, newListing);
 }
 
@@ -132,8 +132,8 @@ async function createListing(client, newListing){
 */
 //-----
 
-async function listDatabases(client){
-  var databasesList = await client.db().admin().listDatabases();
+function listDatabases(client){
+  var databasesList = client.db().admin().listDatabases();
   console.log("Databases: ");
   databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 
