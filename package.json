@@ -17,7 +17,7 @@
     "ejs": "",
     "moment": "",
     "nodemailer": "",
-    "mongodb": "2.2.36",
+    "mongodb": "3.6.x",
     "router": "",
     "regexp": "",
     "regex": ""
