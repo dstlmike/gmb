@@ -1,4 +1,4 @@
-var MongoClient = require('mongodb').MongoClient;
+/*var MongoClient = require('mongodb').MongoClient;
 
 
 
@@ -33,7 +33,7 @@ var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:2701
   await client.close();
 }
 }
-*/
+
 client.connect();
  // listDatabases(client);
   createListing(
@@ -95,7 +95,7 @@ async function connectMain(client, newListing) {
 main().catch(console.err);
 //main().catch(console.err);
 
-*/
+
 
 //var {MongoClient} = require('mongodb');
 //var main = require('./tutorial.js')
@@ -130,7 +130,7 @@ async function createListing(client, newListing){
   var result = await client.db("sampledb").collection("test").insertOne(newListing);
   console.log(result, newListing);
 }
-*/
+
 //-----
 
 function listDatabases(client){
