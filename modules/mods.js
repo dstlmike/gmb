@@ -1,6 +1,6 @@
 var mods = [];
 var db = require('./db.js');
-var db_table = 'rooms';
+var db_table = 'mods';
 var modCommands = [addModCmd, listModsCmd, removeModCmd];
 
 getAllMods();
