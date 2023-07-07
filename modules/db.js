@@ -44,7 +44,7 @@ client.connect();
     bathrooms: 1
   }
 
-//);
+);
  // listDatabases(client);
 //} catch (e){
  // console.error(e);
