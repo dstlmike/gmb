@@ -4,6 +4,7 @@ var MongoClient = require('mongodb').MongoClient;
 
 //var { MongoClient } = require('mongodb');
 //var createListing = require('./test.js');
+
 async function main (client){
  // var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
 var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-01.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-02.hneglt3.mongodb.net:27017/?ssl=true&replicaSet=atlas-u69sga-shard-0&authSource=admin&retryWrites=true&w=majority';
@@ -11,6 +12,7 @@ var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:2701
 
   var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 try {
+ /*
   await client.connect();
   //await listDatabases(client);
   await createListing(
@@ -28,6 +30,26 @@ try {
   console.error(e);
 } finally {
   await client.close();
+}
+}
+*/
+client.connect();
+  //await listDatabases(client);
+  createListing(
+    client,
+      {
+    name: "Lovely Loft",
+    summary: "A charming loft in Paris",
+    bedrooms: 1,
+    bathrooms: 1
+  }
+
+);
+ // listDatabases(client);
+} catch (e){
+  console.error(e);
+} finally {
+   client.close();
 }
 }
 /*
