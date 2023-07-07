@@ -384,11 +384,11 @@ exports.getAllDocuments = function(collection, docs, callback) {
    // var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
       if (callback)
         callback(docs);
-console.log(docs);
-alldocs;
+//console.log(docs);
+//alldocs;
       db.close();
     });
-   allDocs;
+ //  allDocs;
   });
 }  
     //callback(docs);
