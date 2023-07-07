@@ -18,7 +18,7 @@
     "moment": "",
     "nodemailer": "",
     "mongoose":"",
-    "mongodb": "3.6.x",
+    "mongodb": "2.2.x",
     "router": "",
     "regexp": "",
     "regex": ""
