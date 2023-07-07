@@ -138,7 +138,7 @@ function listDatabases(client){
   console.log("Databases: ");
   databasesList.databases.forEach(db, function(req, res, next) { //=> console.log(` - ${db.name}`));
 
-   console.log("- ${db.name}");
+   console.log("db.name");
   });
 }
 
