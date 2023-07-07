@@ -112,7 +112,7 @@ function createListing(client, newListing){
   console.log(result, newListing);
 }
 
-main(client);
+main();
 //exports.createListing = createListing;
 
 
