@@ -5,7 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 //var { MongoClient } = require('mongodb');
 //var createListing = require('./test.js');
 
-async function main (client){
+ function main (client){
  // var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
 var uri = 'mongodb://user2:user2@ac-ykrrwag-shard-00-00.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-01.hneglt3.mongodb.net:27017,ac-ykrrwag-shard-00-02.hneglt3.mongodb.net:27017/?ssl=true&replicaSet=atlas-u69sga-shard-0&authSource=admin&retryWrites=true&w=majority';
 //var uri = 'mongodb://user2:user2@cluster0-shard-00-00-esmha.mongodb.net:27017,cluster0-shard-00-01-esmha.mongodb.net:27017,cluster0-shard-00-02-esmha.mongodb.net:27017/sampledbb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
@@ -98,7 +98,7 @@ main().catch(console.err);
 
 //var {MongoClient} = require('mongodb');
 //var main = require('./tutorial.js')
-async function createListing(client, newListing){
+function createListing(client, newListing){
   var newListing = {
 
   name: newListing.name,
