@@ -107,7 +107,7 @@ function createListing(client, newListing){
   bathrooms: newListing.bathrooms
 }
 
-  var result = client.collection("sampledb").collection("rooms").insertOne(newListing);
+  var result = client.db("sampledb").collection("rooms").insertOne(newListing);
   console.log(result, newListing);
 }
 
