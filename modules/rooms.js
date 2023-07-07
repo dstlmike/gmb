@@ -54,7 +54,7 @@ exports.getRoom = function(path) {
   path = path.toLowerCase();
 var botID = '99a3229635d13195ec4d0fe4e7'; //
 
-  if (rooms[path] == 'config') {
+  if (rooms[path]) {
     room.type = path;
  room.id = rooms[path];
  }
