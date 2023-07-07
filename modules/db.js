@@ -380,10 +380,10 @@ function connect(callback){
 exports.getAllDocuments = function(collection, docs, callback) {
   mongoDB.connect(connection_string, function(err, db) {
     //if(err) throw err;
-    var allDocs = db.collection(collection).find().toArray(function(err, docs) {
+    var allDocs = db.collection(collection).find().toArray(function(err, result) {
    // var allDocs = db.collection(collection).find().toArray(docs, function(err, result){
       if (callback)
-        callback(docs);
+        callback(result);
 //console.log(docs);
 //alldocs;
       db.close();
