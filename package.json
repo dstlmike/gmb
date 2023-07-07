@@ -1,6 +1,6 @@
 {
   "name": "groupme-bot",
-  "version": "0.0.1",
+  "version": "",
   "description": "A bot made for groupme",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "ejs": "",
     "moment": "",
     "nodemailer": "",
+    "mongoose":"",
     "mongodb": "3.6.x",
     "router": "",
     "regexp": "",
