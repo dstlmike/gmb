@@ -111,7 +111,7 @@ function createListing(client, newListing){
   console.log(result, newListing);
 }
 
-main().catch(console.err);
+main();
 //exports.createListing = createListing;
 
 
